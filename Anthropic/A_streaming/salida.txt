@@ -1,0 +1,24 @@
+texto: café con respuesta está despacio datos sin claude servidor sin
+stop_reason: max_tokens
+input_tokens: 1762
+output_tokens: 735
+texto: café prueba el gracias calma tinto sin en compila respuesta
+stop_reason: stop_sequence
+input_tokens: 1362
+output_tokens: 194
+texto: con en sin rápido modelo mañana
+stop_reason: end_turn
+input_tokens: 2153
+output_tokens: 638
+texto: ¡vamos! ¡vamos! respuesta compila arepa tinto sin gracias arepa hola
+stop_reason: end_turn
+input_tokens: 2664
+output_tokens: 94
+texto: gracias con sin rápido sin modelo claude con responde café responde arepa
+stop_reason: end_turn
+input_tokens: 2114
+output_tokens: 491
+texto: ¿listo? rápido modelo en sin datos calma claude gracias con datos hola sin despacio
+stop_reason: max_tokens
+input_tokens: 156
+output_tokens: 80

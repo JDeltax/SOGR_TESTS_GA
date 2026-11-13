@@ -90,3 +90,30 @@ Me salvó que P siempre apunta a un índice menor: recorriendo de N hasta 1 los 
 ![Salida oficial D](D_chain_reactions/evidencias/02_salida_oficial.png)
 
 8/8 casos correctos.
+
+---
+---
+
+## Prueba Anthropic - La API de Claude
+
+Juan Pablo Vega Villamil · código de la prueba ANTHROPIC-04 · también en Python 3
+
+Todo está en la carpeta [Anthropic/](Anthropic/), con la misma estructura de antes: solución, ejemplo, entrada oficial, salida y capturas. Solo usé la librería `json` de Python.
+
+---
+
+### A - Respuesta en streaming
+
+Carpeta: [Anthropic/A_streaming/](Anthropic/A_streaming/)
+
+![Entrada oficial A](Anthropic/A_streaming/evidencias/00_entrada_oficial.png)
+
+Las líneas `event:` se pueden ignorar porque el tipo ya viene dentro del JSON de `data:`. Entonces leo solo esas, las parseo y según el `type` voy llenando: `message_start` reinicia todo y guarda los tokens de entrada, cada `text_delta` se pega al bloque de su `index`, `message_delta` trae el `stop_reason` y los tokens de salida, y en `message_stop` imprimo las 4 líneas. Los `ping` y los start/stop de bloque no aportan nada.
+
+Los bloques los guardo en un diccionario por índice y los uno ordenados al final, por si algún día llegan intercalados. Puse `stdout` en UTF-8 para que no se dañen las tildes ni los signos de "¡" y "¿".
+
+![Ejemplo A](Anthropic/A_streaming/evidencias/01_ejemplo.png)
+
+![Salida oficial A](Anthropic/A_streaming/evidencias/02_salida_oficial.png)
+
+Las 24 líneas (6 mensajes) correctas.
