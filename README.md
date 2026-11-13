@@ -72,3 +72,21 @@ El ejemplo me dio `JCCJJ` en el caso 3 en vez de `CJJCC`. Al principio me asust�
 ![Salida oficial C](C_parenting_partnering/evidencias/02_salida_oficial.png)
 
 10/10 casos correctos (la mitad son IMPOSSIBLE, que el verificador también confirmó).
+
+---
+
+### D - Chain Reactions
+
+Carpeta: [D_chain_reactions/](D_chain_reactions/)
+
+![Entrada oficial D](D_chain_reactions/evidencias/00_entrada_oficial.png)
+
+Los módulos forman un árbol con raíz en el abismo y los iniciadores son las hojas. El truco está en cada nodo con varios hijos: solo una de las cadenas que llegan puede seguir subiendo, y las otras se quedan cobrando su máximo ahí. Lo que conviene es dejar seguir la de menor valor, porque al subir lo más probable es que se la coma un F más grande de arriba, y las grandes se cobran de una. Entonces cada nodo pasa hacia arriba `max(F, menor de sus hijos)` y al total se le suma el resto.
+
+Me salvó que P siempre apunta a un índice menor: recorriendo de N hasta 1 los hijos siempre quedan listos antes que el papá, así que no hizo falta DFS recursivo ni pelear con el límite de recursión de Python. Los totales llegan a ~10^12, pero en Python los enteros no se desbordan.
+
+![Ejemplo D](D_chain_reactions/evidencias/01_ejemplo.png)
+
+![Salida oficial D](D_chain_reactions/evidencias/02_salida_oficial.png)
+
+8/8 casos correctos.
