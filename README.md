@@ -1,15 +1,11 @@
 # SOGR_TESTS_GA
 Los test de google y anthropic
 
-## Prueba Google · Hackatón individual — Solución
+## Prueba Google - Hackatón individual
 
-- **Participante:** Juan Pablo Vega Villamil
-- **Código de la prueba:** GOOGLE-04
-- **Lenguaje:** Python 3
+Juan Pablo Vega Villamil · código de la prueba GOOGLE-04 · todo en Python 3
 
-Cada ejercicio tiene su carpeta con la solución (`solucion.py`), el ejemplo del enunciado (`ejemplo.txt`), mi entrada oficial (`entrada.txt`), la salida que entregué (`salida.txt`) y las capturas en `evidencias/`.
-
-Para correr cualquiera:
+En cada carpeta está la solución, el ejemplo del enunciado, mi entrada oficial, la salida que entregué y las capturas. Se corre con:
 
 ```bash
 python3 solucion.py < entrada.txt
@@ -17,31 +13,44 @@ python3 solucion.py < entrada.txt
 
 ---
 
-### A · d1000000 (Code Jam 2022 · Ordenamiento y voraz)
+### A - d1000000
 
-📁 [A_d1000000/](A_d1000000/)
+Carpeta: [A_d1000000/](A_d1000000/)
 
-**La idea.** Si ordeno los dados de menor a mayor número de caras, puedo recorrerlos e ir armando la escalera: si el dado actual tiene más caras que el largo que llevo, sirve para poner el siguiente escalón y sumo uno; si no, lo descarto porque no alcanza. Usar primero los dados pequeños es lo que conviene, porque los grandes siempre van a servir más adelante. Queda en O(N log N) por el ordenamiento, que con N = 1.000 es nada.
-
-Esta es mi entrada oficial generada con mi nombre y el código GOOGLE-04:
+Este era el más tranquilo. Se ordenan los dados de menor a mayor y se va armando la escalera: si el dado tiene más caras que el largo que llevo, sirve para el siguiente escalón, si no, se bota. Gastar primero los dados pequeños es lo que conviene porque los grandes igual sirven después.
 
 ![Entrada oficial A](A_d1000000/evidencias/00_entrada_oficial.png)
 
-**Lo que salió mal al principio.** La primera versión la hice a la carrera y tenía dos errores:
+Eso sí, la primera versión la hice muy a la carrera: leía cada caso como si N y los valores vinieran en la misma línea y además ordenaba los números como texto. El ejemplo daba cualquier cosa:
 
-1. Asumí que cada caso venía en **una sola línea** (N y los valores juntos), pero en realidad N va en una línea y los S<sub>i</sub> en la siguiente. Entonces el programa estaba leyendo líneas que no eran.
-2. Ordené los valores **como texto** (se me olvidó pasarlos a `int` antes del `sorted`), así que `"10"` quedaba antes que `"9"` y el voraz se dañaba.
+![Primer intento A](A_d1000000/evidencias/01_primer_intento_fallido.png)
 
-El ejemplo daba `0, 2, 0, 2` cuando debía dar `3, 3, 5, 2`:
+Lo cambié para leer toda la entrada como una lista de números, convertidos a int antes de ordenar, y ya cuadró.
 
-![Primer intento fallido](A_d1000000/evidencias/01_primer_intento_fallido.png)
+![Ejemplo A](A_d1000000/evidencias/02_ejemplo_ok.png)
 
-**Cómo lo corregí.** Cambié la lectura para tomar toda la entrada como una lista de números (tokens) y no depender de cómo vengan partidas las líneas, y ordené ya convertidos a entero. Con eso el ejemplo cuadró:
-
-![Ejemplo corregido](A_d1000000/evidencias/02_ejemplo_ok.png)
-
-**Entrada oficial.** Corre en menos de 0,1 s. Esta es la salida que le entregué al jurado:
+Con la entrada oficial corre en nada:
 
 ![Salida oficial A](A_d1000000/evidencias/03_salida_oficial.png)
 
-Resultado: **10/10 casos correctos** ✅
+10/10 casos correctos.
+
+---
+
+### B - Moons and Umbrellas
+
+Carpeta: [B_moons_and_umbrellas/](B_moons_and_umbrellas/)
+
+![Entrada oficial B](B_moons_and_umbrellas/evidencias/00_entrada_oficial.png)
+
+Aquí me confié. Rellené cada `?` con la letra de antes para no crear parejas CJ o JC nuevas, el ejemplo pasó completo y casi lo entrego así :v. Ya con la entrada oficial la mitad de los casos salían mal, todos con X o Y negativos. Tenía sentido: si una pareja da plata en vez de costar, toca meterla a propósito, y copiando la letra anterior eso nunca pasa.
+
+![Voraz fallido B](B_moons_and_umbrellas/evidencias/01_voraz_fallido.png)
+
+Terminó siendo programación dinámica con dos estados: el costo mínimo hasta cada posición si la última letra es C o si es J. Pasar de J a C suma Y y de C a J suma X, y al final se toma el menor. Es lineal, así que las cadenas de 1000 caracteres no son problema.
+
+![Ejemplo B](B_moons_and_umbrellas/evidencias/02_ejemplo_ok.png)
+
+![Salida oficial B](B_moons_and_umbrellas/evidencias/03_salida_oficial.png)
+
+10/10 casos correctos.
