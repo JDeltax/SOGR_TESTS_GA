@@ -1,0 +1,20 @@
+tool_result toolu_01 error: ciudad desconocida: Pasto
+tool_result toolu_02 error: ciudad desconocida: Pasto
+tool_result toolu_03 62600
+tool_result toolu_04 47424
+tool_result toolu_05 error: división por cero
+tool_result toolu_06 -96
+tool_result toolu_07 14 °C
+tool_result toolu_08 error: herramienta desconocida: traductor
+tool_result toolu_09 error: operación desconocida: potencia
+tool_result toolu_10 213
+tool_result toolu_11 14 °C
+tool_result toolu_12 996
+tool_result toolu_13 506632
+tool_result toolu_14 error: herramienta desconocida: buscar_web
+tool_result toolu_15 14 °C
+tool_result toolu_16 26
+tool_result toolu_17 error: división por cero
+tool_result toolu_18 26 °C
+final: Listo, revisé 18 resultados.
+resumen: 18 llamadas, 7 errores
