@@ -1,0 +1,12 @@
+{"input_tokens":4228,"cache_creation_input_tokens":1760,"cache_read_input_tokens":0,"output_tokens":425}
+{"input_tokens":1189,"cache_creation_input_tokens":9096,"cache_read_input_tokens":9010,"output_tokens":1677}
+{"input_tokens":4494,"cache_creation_input_tokens":0,"cache_read_input_tokens":23380,"output_tokens":572}
+{"input_tokens":4437,"cache_creation_input_tokens":0,"cache_read_input_tokens":17190,"output_tokens":1391}
+{"input_tokens":2394,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":889}
+{"input_tokens":2169,"cache_creation_input_tokens":0,"cache_read_input_tokens":12290,"output_tokens":1510}
+{"input_tokens":677,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":1509}
+{"input_tokens":405,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":1971}
+{"input_tokens":131,"cache_creation_input_tokens":0,"cache_read_input_tokens":27760,"output_tokens":1819}
+{"input_tokens":2757,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":830}
+{"input_tokens":3162,"cache_creation_input_tokens":0,"cache_read_input_tokens":2320,"output_tokens":1240}
+{"input_tokens":3501,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":761}

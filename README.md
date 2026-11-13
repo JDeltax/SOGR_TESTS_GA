@@ -135,3 +135,23 @@ Lo único con maña fue la división entera: el `//` de Python redondea hacia ab
 ![Salida oficial B](Anthropic/B_herramientas/evidencias/02_salida_oficial.png)
 
 20/20 líneas correctas (18 llamadas, 7 errores).
+
+---
+
+### C - Costos con caché de prompts
+
+Carpeta: [Anthropic/C_costos_cache/](Anthropic/C_costos_cache/)
+
+![Entrada oficial C](Anthropic/C_costos_cache/evidencias/00_entrada_oficial.png)
+
+Primero lo hice con flotantes y `:.6f`, y la verdad pasó todo. Igual lo cambié a enteros, porque la misma página avisa que el redondeo puede fallar y no quería que dependiera de la suerte con otra entrada.
+
+La cuenta es en millonésimas de dólar: $3 por millón son 3 micro-dólares por token y $15 son 15. Para no meter el 1,25 ni el 0,1 multipliqué todo por 100 (entrada 300, escribir en caché 375, leer de caché 30, salida 1500) y al final divido entre 100. En mi entrada esa división siempre da exacta, porque los tokens de escritura vienen en múltiplos de 4 y los de lectura en múltiplos de 10. Para imprimir, la parte entera son los dólares y el resto va con 6 dígitos rellenando con ceros.
+
+`sin_cache` es lo mismo pero cobrando todos los tokens de entrada como normales, y el ahorro es la resta.
+
+![Ejemplo C](Anthropic/C_costos_cache/evidencias/01_ejemplo.png)
+
+![Salida oficial C](Anthropic/C_costos_cache/evidencias/02_salida_oficial.png)
+
+16/16 líneas correctas.
