@@ -155,3 +155,23 @@ La cuenta es en millonésimas de dólar: $3 por millón son 3 micro-dólares por
 ![Salida oficial C](Anthropic/C_costos_cache/evidencias/02_salida_oficial.png)
 
 16/16 líneas correctas.
+
+---
+
+### D - Límites de velocidad
+
+Carpeta: [Anthropic/D_limites_velocidad/](Anthropic/D_limites_velocidad/)
+
+![Entrada oficial D](Anthropic/D_limites_velocidad/evidencias/00_entrada_oficial.png)
+
+Hice una clase `Cubeta` y creé dos: una de solicitudes (capacidad 3, 1 por segundo) y otra de tokens de entrada (capacidad 100, 20 por segundo). En cada `REQUEST` primero se recargan las dos según el tiempo que pasó desde la anterior, con tope en la capacidad. Si las dos alcanzan, se descuenta y es `ok`. Si no, no se toca nada y el retry-after es el mayor de los dos tiempos de espera, redondeado hacia arriba. El cuarto número (tokens de caché) se lee pero no se usa, que es justamente lo que dice el enunciado.
+
+Lo que más me hizo dudar fue si un 429 debía gastar algo o mover el reloj de la recarga. No gasta, y como la recarga depende solo del tiempo, da igual cuántas veces lo rechacen.
+
+En las capturas puse la entrada y la salida lado a lado para que se vea qué respondió cada solicitud.
+
+![Ejemplo D](Anthropic/D_limites_velocidad/evidencias/01_ejemplo.png)
+
+![Salida oficial D](Anthropic/D_limites_velocidad/evidencias/02_salida_oficial.png)
+
+25/25 líneas correctas.
