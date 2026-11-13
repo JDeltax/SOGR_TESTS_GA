@@ -54,3 +54,21 @@ Terminó siendo programación dinámica con dos estados: el costo mínimo hasta 
 ![Salida oficial B](B_moons_and_umbrellas/evidencias/03_salida_oficial.png)
 
 10/10 casos correctos.
+
+---
+
+### C - Parenting Partnering Returns
+
+Carpeta: [C_parenting_partnering/](C_parenting_partnering/)
+
+![Entrada oficial C](C_parenting_partnering/evidencias/00_entrada_oficial.png)
+
+Se ordenan las actividades por hora de inicio y para cada una se mira quién está libre: si Cameron ya terminó lo suyo se la doy a él, si no a Jamie, y si ninguno de los dos puede es IMPOSSIBLE. Como la respuesta va en el orden de la entrada, guardo el índice original de cada actividad antes de ordenar para poner la letra donde toca.
+
+El ejemplo me dio `JCCJJ` en el caso 3 en vez de `CJJCC`. Al principio me asusté, pero es la misma repartición con los papás cambiados, y el enunciado dice que cualquier asignación válida sirve.
+
+![Ejemplo C](C_parenting_partnering/evidencias/01_ejemplo.png)
+
+![Salida oficial C](C_parenting_partnering/evidencias/02_salida_oficial.png)
+
+10/10 casos correctos (la mitad son IMPOSSIBLE, que el verificador también confirmó).
